@@ -56,10 +56,8 @@ plugin_data={
 class echo(on_command): #继承指令类
     @handle_event
     def handle(self):#必填函数
-        
-        #返回值即为机器人回复文本
         #args为传入的参数，例如:用户输入为 /echo hello world ， 则参数列表为["hello","world"] ， 则echo指令返回值为 hello
-        return args[0]
+        return self.send(args[0])
     
 ```
 7. 您还可以获取通话的上下文，例如:
